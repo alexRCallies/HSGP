@@ -216,7 +216,11 @@ namespace HumaneSociety
                 db.Animals.InsertOnSubmit(animal);
                 db.SubmitChanges();
             }
-            throw new NotImplementedException();
+            else
+            {
+                throw new NotImplementedException();
+            }
+            
         }
 
         internal static Animal GetAnimalByID(int id)
@@ -224,12 +228,14 @@ namespace HumaneSociety
             var animal = from Animal in db.Animals
                          where id == Animal.AnimalId
                          select Animal;
-            throw new NotImplementedException();
+            return animal.SingleOrDefault();
         }
 
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates)
         {            
-            
+            // int is key of what your doing 1 = category , value what your changing the category to
+            //foreach loop over dictionary, switchcase on the key
+
             throw new NotImplementedException();
         }
 
