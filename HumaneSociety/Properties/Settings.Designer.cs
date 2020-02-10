@@ -22,5 +22,16 @@ namespace HumaneSociety.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-3B575C3\\SQLEXPRESS;Initial Catalog=HumaineSpciety;Integrated " +
+            "Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string HumaineSpcietyConnectionString {
+            get {
+                return ((string)(this["HumaineSpcietyConnectionString"]));
+            }
+        }
     }
 }
