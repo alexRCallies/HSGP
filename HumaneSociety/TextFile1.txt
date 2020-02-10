@@ -40,3 +40,9 @@ INSERT INTO Addresses VALUES('1357 Lame St.', 'Milwukaee', 49, 53214 );
 INSERT INTO Addresses VALUES('4321 Small St.', 'Milwukaee', 49 , 53214);
 INSERT INTO Addresses VALUES('8642 South St.', 'Milwukaee', 49 , 53214);
 
+Clients Query
+INSERT INTO Clients VALUES('Richard', 'Prior', 'rprior', 'rp12', 1, 'rprior@gmail.com');
+INSERT INTO Clients VALUES('Murphy', 'Eddie', 'edmrph', 'wm12', 2, 'edmurph@gmail.com');
+INSERT INTO Clients VALUES('Green', 'Tom', 'tgreen', 'td12', 3, 'tgreen@gmail.com');
+INSERT INTO Clients VALUES('Carlin', 'George', 'gcarlin', 'gc12', 4, 'gcarlin@gmail.com');
+INSERT INTO Clients VALUES('Chappell', 'Dave', 'dchappell', 'dc12', 5, 'dchappell@gmail.com');
