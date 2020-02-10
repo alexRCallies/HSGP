@@ -1,1 +1,7 @@
-﻿
+﻿Categories Querey
+INSERT INTO Categories VALUES('Dog');
+INSERT INTO Categories VALUES('Cat');
+INSERT INTO Categories VALUES('Bird');
+INSERT INTO Categories VALUES('Hamster');
+INSERT INTO Categories VALUES('Lizard');
+

@@ -26,11 +26,19 @@ namespace HumaneSociety.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DEJANB8EA\\SQLEXPRESS;Initial Catalog=HumaneSociety;Integrated Securit" +
             "y=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
         public string HumaneSocietyConnectionString {
             get {
                 return ((string)(this["HumaneSocietyConnectionString"]));
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-3B575C3\\SQLEXPRESS;Initial Catalog=HumaineSpciety;Integrated " +
+            "Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string HumaineSpcietyConnectionString {
+            get {
+                return ((string)(this["HumaineSpcietyConnectionString"]));
+>>>>>>> 4e72e0a742d69f81206dccb563b31acd15f1b5d5
             }
         }
     }
