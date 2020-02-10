@@ -13,7 +13,11 @@ INSERT INTO DietPlans VALUES('Hamster Food','Kibble', 1);
 INSERT INTO DietPlans VALUES('Purina','Seed', 1);
 
 Animals Query
-
+INSERT INTO Animals VALUES('Spot',24, 5, 'mild', 1,1,'m', 'open', 1,1,1 );
+INSERT INTO Animals VALUES('Nicki',10, 13, 'vicious', 0,0,'f', 'open', 2,2,3 );
+INSERT INTO Animals VALUES('Sam',18, 5, 'passive', 1,0,'m', 'open', 3,5,2 );
+INSERT INTO Animals VALUES('Mr. PBJ',88, 7, 'playful', 1,1,'m', 'open', 1,1,1 );
+INSERT INTO Animals VALUES('Spike',3, 4, 'mild', 1,0,'m', 'open', 5,3,4 );
 
 Employee Query
 INSERT INTO Employees VALUES('Roger','Rabbit', 'rrabit', 'jrbit27', 1234, 'rrabit@gmail.com');
