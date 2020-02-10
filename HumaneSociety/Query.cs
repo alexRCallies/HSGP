@@ -166,7 +166,46 @@ namespace HumaneSociety
         // TODO: Allow any of the CRUD operations to occur here
         internal static void RunEmployeeQueries(Employee employee, string crudOperation)
         {
-            throw new NotImplementedException();
+            switch (crudOperation)
+            {
+                case "create":
+                    db.Employees.InsertOnSubmit(employee);
+                    db.SubmitChanges();
+                    break;
+                case "read":
+                    employee = db.Employees.Where(e => e.EmployeeId == employee.EmployeeId).SingleOrDefault();
+                    break;
+                case "delete":
+                    db.Employees.DeleteOnSubmit(employee);
+                    db.SubmitChanges();
+                    break;
+                case "update":
+                    Employee employeeFromDb = null;
+
+                    try
+                    {
+                        employeeFromDb = db.Employees.Where(e => e.EmployeeId == employee.EmployeeId).Single();
+                    }
+                    catch (InvalidOperationException e)
+                    {
+                        Console.WriteLine("No employees have a EmployeeNumber that matches the Employee passed in.");
+                        Console.WriteLine("No update have been made.");
+                        return;
+                    }
+
+                    // update clientFromDb information with the values on clientWithUpdates (aside from address)
+                    employeeFromDb.FirstName = employee.FirstName;
+                    employeeFromDb.LastName = employee.LastName;
+                    employeeFromDb.UserName = employee.UserName;
+                    employeeFromDb.Password = employee.Password;
+                    employeeFromDb.Email = employee.Email;
+
+                    db.SubmitChanges();
+                    break;
+                    
+                default:
+                    throw new NotImplementedException();
+            }
         }
 
         // TODO: Animal CRUD Operations
@@ -182,6 +221,7 @@ namespace HumaneSociety
 
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates)
         {            
+            
             throw new NotImplementedException();
         }
 
