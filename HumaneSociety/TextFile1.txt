@@ -14,3 +14,10 @@ INSERT INTO DietPlans VALUES('Purina','Seed', 1);
 
 Animals Query
 
+
+Employee Query
+INSERT INTO Employees VALUES('Roger','Rabbit', 'rrabit', 'jrbit27', 1234, 'rrabit@gmail.com');
+INSERT INTO Employees VALUES('Frodo','Baggins', 'fbaggins', 'fbags22', 1233, 'fbags@gmail.com');
+INSERT INTO Employees VALUES('Axel','Foley', 'AFoley', 'afol21', 1232, 'afol@gmail.com');
+INSERT INTO Employees VALUES('Leia','Skywalker', 'lsky', 'lsky20', 1231, 'lsky@gmail.com');
+INSERT INTO Employees VALUES('Thor','Odinson', 'thson', 'thson19', 1230, 'thson@gmail.com');
