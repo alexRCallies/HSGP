@@ -25,3 +25,18 @@ INSERT INTO Employees VALUES('Frodo','Baggins', 'fbaggins', 'fbags22', 1233, 'fb
 INSERT INTO Employees VALUES('Axel','Foley', 'AFoley', 'afol21', 1232, 'afol@gmail.com');
 INSERT INTO Employees VALUES('Leia','Skywalker', 'lsky', 'lsky20', 1231, 'lsky@gmail.com');
 INSERT INTO Employees VALUES('Thor','Odinson', 'thson', 'thson19', 1230, 'thson@gmail.com');
+
+Rooms Query
+INSERT INTO Rooms VALUES(1,3);
+INSERT INTO Rooms VALUES(2,1);
+INSERT INTO Rooms VALUES(3,2);
+INSERT INTO Rooms VALUES(4,5);
+INSERT INTO Rooms VALUES(5,4);
+
+Addresses Query
+INSERT INTO Addresses VALUES('1234 laugh Ln.', 'Milwukaee', 49, 53214 );
+INSERT INTO Addresses VALUES('2468 Giant Cir.', 'Milwukaee', 49, 53214 );
+INSERT INTO Addresses VALUES('1357 Lame St.', 'Milwukaee', 49, 53214 );
+INSERT INTO Addresses VALUES('4321 Small St.', 'Milwukaee', 49 , 53214);
+INSERT INTO Addresses VALUES('8642 South St.', 'Milwukaee', 49 , 53214);
+
