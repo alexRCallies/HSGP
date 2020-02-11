@@ -192,8 +192,6 @@ namespace HumaneSociety
                         Console.WriteLine("No update have been made.");
                         return;
                     }
-
-                    // update clientFromDb information with the values on clientWithUpdates (aside from address)
                     employeeFromDb.FirstName = employee.FirstName;
                     employeeFromDb.LastName = employee.LastName;
                     employeeFromDb.UserName = employee.UserName;
@@ -233,15 +231,21 @@ namespace HumaneSociety
 
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates)
         {            
-            // int is key of what your doing 1 = category , value what your changing the category to
-            //foreach loop over dictionary, switchcase on the key
 
             throw new NotImplementedException();
         }
 
         internal static void RemoveAnimal(Animal animal)
         {
-            throw new NotImplementedException();
+            if (animal != null)
+            {
+                db.Animals.DeleteOnSubmit(animal);
+                db.SubmitChanges();
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
         }
         
         // TODO: Animal Multi-Trait Search
