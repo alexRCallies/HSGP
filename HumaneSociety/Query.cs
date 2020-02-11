@@ -328,6 +328,7 @@ namespace HumaneSociety
         // TODO: Adoption CRUD Operations
         internal static void Adopt(Animal animal, Client client)
         {
+            
             Adoption adoption = new Adoption();
             adoption.AnimalId = animal.AnimalId;
             adoption.ClientId = client.ClientId;
@@ -335,11 +336,18 @@ namespace HumaneSociety
             adoption.ApprovalStatus = "Pending";
             db.Adoptions.InsertOnSubmit(adoption);
             db.SubmitChanges();
+            
         }
 
         internal static IQueryable<Adoption> GetPendingAdoptions()
         {
-            
+            foreach(Adoption adoption in db.Adoptions)
+            {
+                if(adoption.ApprovalStatus == "Pending")
+                {
+                    Console.WriteLine(adoption.Animal.Name);
+                }
+            }
             throw new NotImplementedException();
         }
 
