@@ -339,7 +339,7 @@ namespace HumaneSociety
             Room room = null;
             if (animalId != 0)
             {
-                room = db.Rooms.Where(r => r.AnimalId == animalId).SingleOrDefault();
+                room = db.Rooms.Where(r => r.Animal.AnimalId == animalId).SingleOrDefault();
                 return room;
             }
             else
@@ -418,9 +418,22 @@ namespace HumaneSociety
         // TODO: Shots Stuff
         internal static IQueryable<AnimalShot> GetShots(Animal animal)
         {
+<<<<<<< HEAD
 
             var shots = db.AnimalShots.Where(x => x.Animal.AnimalId == animal.AnimalId);
             return shots;
+=======
+            if (animal != null)
+            {
+                var shots = db.AnimalShots.Where(x => x.Animal.AnimalId == animal.AnimalId);
+                return shots;
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+
+>>>>>>> 9735ccef3f71190cde46b8e260fd903914cfe8e3
         }
 
         internal static void UpdateShot(string shotName, Animal animal) 

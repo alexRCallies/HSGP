@@ -46,3 +46,5 @@ INSERT INTO Clients VALUES('Murphy', 'Eddie', 'edmrph', 'wm12', 2, 'edmurph@gmai
 INSERT INTO Clients VALUES('Green', 'Tom', 'tgreen', 'td12', 3, 'tgreen@gmail.com');
 INSERT INTO Clients VALUES('Carlin', 'George', 'gcarlin', 'gc12', 4, 'gcarlin@gmail.com');
 INSERT INTO Clients VALUES('Chappell', 'Dave', 'dchappell', 'dc12', 5, 'dchappell@gmail.com');
+
+connection string = Data Source=DESKTOP-3B575C3\SQLEXPRESS;Initial Catalog=HumaineSpciety;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
