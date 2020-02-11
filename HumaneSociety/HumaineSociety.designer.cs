@@ -66,7 +66,7 @@ namespace HumaneSociety
     #endregion
 		
 		public HumaineSocietyDataContext() : 
-				base(global::HumaneSociety.Properties.Settings.Default.HumaineSpcietyConnectionString, mappingSource)
+				base(global::HumaneSociety.Properties.Settings.Default.HumaneSocietyConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

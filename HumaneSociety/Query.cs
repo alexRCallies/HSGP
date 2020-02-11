@@ -339,7 +339,7 @@ namespace HumaneSociety
             Room room = null;
             if (animalId != 0)
             {
-                room = db.Rooms.Where(r => r.AnimalId == animalId).SingleOrDefault();
+                room = db.Rooms.Where(r => r.Animal.AnimalId == animalId).SingleOrDefault();
                 return room;
             }
             else
