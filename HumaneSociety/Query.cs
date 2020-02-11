@@ -257,7 +257,17 @@ namespace HumaneSociety
         // TODO: Misc Animal Things
         internal static int GetCategoryId(string categoryName)
         {
-            throw new NotImplementedException();
+            if (categoryName != null)
+            {
+                var category = from categories in db.Categories
+                               where categoryName == categories.Name
+                               select categories.CategoryId;
+                return category.SingleOrDefault();
+            }
+            else
+            {
+               throw new NotImplementedException();
+            }
         }
         
         internal static Room GetRoom(int animalId)
