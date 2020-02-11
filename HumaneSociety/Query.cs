@@ -192,6 +192,10 @@ namespace HumaneSociety
                         Console.WriteLine("No update have been made.");
                         return;
                     }
+<<<<<<< HEAD
+
+=======
+>>>>>>> b82605eafd1ec957c5cb77478fa20c3752120fff
                     employeeFromDb.FirstName = employee.FirstName;
                     employeeFromDb.LastName = employee.LastName;
                     employeeFromDb.UserName = employee.UserName;
@@ -229,10 +233,47 @@ namespace HumaneSociety
             return animal.SingleOrDefault();
         }
 
+<<<<<<< HEAD
+        internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates) 
+        {
+            var animal = db.Animals.Where(x => x.AnimalId == animalId).SingleOrDefault();
+=======
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates)
         {            
+>>>>>>> b82605eafd1ec957c5cb77478fa20c3752120fff
 
-            throw new NotImplementedException();
+            foreach (KeyValuePair<int, string> element in updates)
+            {
+                switch (element.Key)
+                {
+                    case 1:
+                        animal.Category.Name = element.Value;
+                        break;
+                    case 2:
+                        animal.Name = element.Value;
+                        break;
+                    case 3:
+                        animal.Age = Convert.ToInt32(element.Value);
+                        break;
+                    case 4:
+                        animal.Demeanor = element.Value;
+                        break;
+                    case 5:
+                        animal.KidFriendly = Convert.ToBoolean(element.Value) == (true || false);
+                        break;
+                    case 6: 
+                        animal.PetFriendly = Convert.ToBoolean(element.Value) ==  (true || false);
+                        break;
+                    case 7:
+                        animal.Weight = Convert.ToInt32(element.Value);
+                        break;
+                    case 8:
+                        animal.AnimalId = Convert.ToInt32(element.Value);
+                        break;
+                }
+
+            }
+            db.SubmitChanges();
         }
 
         internal static void RemoveAnimal(Animal animal)
