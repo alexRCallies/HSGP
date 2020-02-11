@@ -317,6 +317,11 @@ namespace HumaneSociety
         
         internal static int GetDietPlanId(string dietPlanName)
         {
+            if(dietPlanName != null)
+            {
+                var dietPlan = db.DietPlans.Where(d => d.Name == dietPlanName).SingleOrDefault();
+                return dietPlan.DietPlanId;
+            }
             throw new NotImplementedException();
         }
 
