@@ -355,7 +355,9 @@ namespace HumaneSociety
         {
             if(isAdopted == true)
             {
-                adoption.ApprovalStatus = "Adopted";
+                var adoptions = db.Adoptions.Where(a => a.AnimalId == adoption.AnimalId).SingleOrDefault();
+                    adoption.ApprovalStatus = "Adopted";
+                db.SubmitChanges();
             }
             {
                 throw new NotImplementedException();
@@ -376,7 +378,9 @@ namespace HumaneSociety
         // TODO: Shots Stuff
         internal static IQueryable<AnimalShot> GetShots(Animal animal)
         {
-            throw new NotImplementedException();
+            
+                throw new NotImplementedException();
+            
         }
 
         internal static void UpdateShot(string shotName, Animal animal)
