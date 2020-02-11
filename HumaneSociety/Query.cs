@@ -233,7 +233,7 @@ namespace HumaneSociety
 
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates) 
         {
-            var animal = db.Animals.Where(x => x.AnimalId == animalId).SingleOrDefault();
+            var animal = db.Animals.Where(x => x.AnimalId == animalId).SingleOrDefault(); 
 
             foreach (KeyValuePair<int, string> element in updates)
             {
@@ -406,7 +406,7 @@ namespace HumaneSociety
 
         internal static void RemoveAdoption(int animalId, int clientId)
         {
-            if (animalId != null && clientId != null)
+            if (animalId != 0 && clientId != 0)
             {
                 var adoption = db.Adoptions.Where(a => a.AnimalId == animalId).SingleOrDefault();
                 db.Adoptions.DeleteOnSubmit(adoption);
@@ -418,24 +418,18 @@ namespace HumaneSociety
         // TODO: Shots Stuff
         internal static IQueryable<AnimalShot> GetShots(Animal animal)
         {
-<<<<<<< HEAD
+
             var shots = db.AnimalShots.Where(x => x.Animal.AnimalId == animal.AnimalId);
             return shots;
-=======
-            
-                throw new NotImplementedException();
-            
->>>>>>> 9dcafd5f420d8a7148404e914c4e6cdd1a53bf9d
         }
 
-        internal static void UpdateShot(string shotName, Animal animal)
+        internal static void UpdateShot(string shotName, Animal animal) 
         {
             Shot shot = new Shot();
             shot.Name = shotName;
             db.Shots.InsertOnSubmit(shot);
 
             var animalShot = new AnimalShot();
-
             animalShot.DateReceived = DateTime.Now;
             animalShot.AnimalId = animal.AnimalId;
             animalShot.ShotId = shot.ShotId;
