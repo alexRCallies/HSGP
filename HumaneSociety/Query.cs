@@ -192,10 +192,6 @@ namespace HumaneSociety
                         Console.WriteLine("No update have been made.");
                         return;
                     }
-<<<<<<< HEAD
-
-=======
->>>>>>> b82605eafd1ec957c5cb77478fa20c3752120fff
                     employeeFromDb.FirstName = employee.FirstName;
                     employeeFromDb.LastName = employee.LastName;
                     employeeFromDb.UserName = employee.UserName;
@@ -232,15 +228,9 @@ namespace HumaneSociety
                          select Animal;
             return animal.SingleOrDefault();
         }
-
-<<<<<<< HEAD
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates) 
         {
             var animal = db.Animals.Where(x => x.AnimalId == animalId).SingleOrDefault();
-=======
-        internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates)
-        {            
->>>>>>> b82605eafd1ec957c5cb77478fa20c3752120fff
 
             foreach (KeyValuePair<int, string> element in updates)
             {
