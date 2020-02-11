@@ -192,6 +192,7 @@ namespace HumaneSociety
                         Console.WriteLine("No update have been made.");
                         return;
                     }
+
                     employeeFromDb.FirstName = employee.FirstName;
                     employeeFromDb.LastName = employee.LastName;
                     employeeFromDb.UserName = employee.UserName;
@@ -228,6 +229,8 @@ namespace HumaneSociety
                          select Animal;
             return animal.SingleOrDefault();
         }
+
+
         internal static void UpdateAnimal(int animalId, Dictionary<int, string> updates) 
         {
             var animal = db.Animals.Where(x => x.AnimalId == animalId).SingleOrDefault();
@@ -278,13 +281,43 @@ namespace HumaneSociety
                 throw new NotImplementedException();
             }
         }
-        
+
         // TODO: Animal Multi-Trait Search
         internal static IQueryable<Animal> SearchForAnimalsByMultipleTraits(Dictionary<int, string> updates) // parameter(s)?
         {
-            throw new NotImplementedException();
+            IQueryable<Animal> animals = db.Animals;
+
+            foreach (KeyValuePair<int, string> element in updates)
+            {
+                switch (element.Key)
+                {
+                    case 1:
+                        animals = animals.Where(x => x.Category.Name == element.Value);
+                        break;
+                    case 2:
+                        animals = animals.Where(x => x.Name == element.Value);
+                        break;
+                    case 3:
+                        animals = animals.Where(x => x.Age == Convert.ToInt32(element.Value));
+                        break;
+                    case 4:
+                        animals = animals.Where(x => x.Demeanor == element.Value);
+                        break;
+                    case 5:
+                        animals = animals.Where(x => x.KidFriendly.ToString() == element.Value);
+                        break;
+                    case 6:
+                        animals = animals.Where(x => x.PetFriendly.ToString() == element.Value);
+                        break;
+                    case 7:
+                        animals = animals.Where(x => x.Weight == Convert.ToInt32(element.Value));
+                        break;
+                    case 8:
+                        animals = animals.Where(x => x.AnimalId == Convert.ToInt32(element.Value));
+                        break;
+                }
+            }return animals;
         }
-         
         // TODO: Misc Animal Things
         internal static int GetCategoryId(string categoryName)
         {
@@ -303,73 +336,32 @@ namespace HumaneSociety
         
         internal static Room GetRoom(int animalId)
         {
-            Room room = null;
-            if (animalId != 0)
-            {
-                room = db.Rooms.Where(r => r.AnimalId == animalId).SingleOrDefault();
-                return room;
-            }
-            else
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
         }
         
         internal static int GetDietPlanId(string dietPlanName)
         {
-            if(dietPlanName != null)
-            {
-                var dietPlan = db.DietPlans.Where(d => d.Name == dietPlanName).SingleOrDefault();
-                return dietPlan.DietPlanId;
-            }
             throw new NotImplementedException();
         }
 
         // TODO: Adoption CRUD Operations
         internal static void Adopt(Animal animal, Client client)
         {
-            
-            Adoption adoption = new Adoption();
-            adoption.AnimalId = animal.AnimalId;
-            adoption.ClientId = client.ClientId;
-            adoption.AdoptionFee = 75;
-            adoption.ApprovalStatus = "Pending";
-            db.Adoptions.InsertOnSubmit(adoption);
-            db.SubmitChanges();
-            
+            throw new NotImplementedException();
         }
 
         internal static IQueryable<Adoption> GetPendingAdoptions()
         {
-            foreach(Adoption adoption in db.Adoptions)
-            {
-                if(adoption.ApprovalStatus == "Pending")
-                {
-                    Console.WriteLine(adoption.Animal.Name);
-                }
-            }
             throw new NotImplementedException();
         }
 
         internal static void UpdateAdoption(bool isAdopted, Adoption adoption)
         {
-            if(isAdopted == true)
-            {
-                adoption.ApprovalStatus = "Adopted";
-            }
-            {
-                throw new NotImplementedException();
-            }
+            throw new NotImplementedException();
         }
 
         internal static void RemoveAdoption(int animalId, int clientId)
         {
-            if(animalId != null && clientId != null)
-            {
-                var adoption = db.Adoptions.Where(a => a.AnimalId == animalId).SingleOrDefault();
-                db.Adoptions.DeleteOnSubmit(adoption);
-                db.SubmitChanges();
-            }
             throw new NotImplementedException();
         }
 
