@@ -397,6 +397,7 @@ namespace HumaneSociety
             {
                 var adoptions = db.Adoptions.Where(a => a.AnimalId == adoption.AnimalId).SingleOrDefault();
                     adoption.ApprovalStatus = "Adopted";
+                adoption.PaymentCollected = true;
                 db.SubmitChanges();
             }
             {
@@ -406,7 +407,7 @@ namespace HumaneSociety
 
         internal static void RemoveAdoption(int animalId, int clientId)
         {
-            if (animalId != null && clientId != null)
+            if (animalId != 0 && clientId != 0)
             {
                 var adoption = db.Adoptions.Where(a => a.AnimalId == animalId).SingleOrDefault();
                 db.Adoptions.DeleteOnSubmit(adoption);
